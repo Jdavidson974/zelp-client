@@ -1,21 +1,28 @@
 <div class="header-layout">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Zelp</a>
+            <!-- LOGO  -->
+            <a class="navbar-brand" routerLink="/"><img src="assets/img/logo.png" alt="zelp" class="logo"></a>
             <button (click)="collapse()" class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="{{isCollapsed ? '' : 'collapse'}} navbar-collapse" id="navbarSupportedContent">
+                <!-- SEARCH  -->
                 <form class="d-flex justify-content-end search" role="search">
-                    <input class="form-control w-50 me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                    <div class="input-group">
+                        <input type="text" placeholder="Recherchez un restaurant..." class="form-control">
+                        <span class="input-group-text btn btn-primary"><fa-icon [icon]="iconSearch"></fa-icon></span>
+                    </div>
                 </form>
+
+                <!-- BTN ZONE  -->
                 <ul class="navbar-nav me-auto d-flex justify-content-end mb-2 mb-lg-0 login">
                     <li class="nav-item me-2">
                         <button class="btn btn-primary">Se connecter</button>
                     </li>
+
                     <li class="nav-item me-2">
                         <button class="btn btn-secondary">S'inscrire</button>
                     </li>
@@ -23,5 +30,6 @@
             </div>
         </div>
     </nav>
+    <!-- TITLE  -->
     <h1 class="title-header">Entrez en contact avec les meilleurs restaurant près de chez vous</h1>
 </div>
