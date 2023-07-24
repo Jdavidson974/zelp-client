@@ -1,0 +1,32 @@
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 5px;
+}
+.card-custom {
+  width: 33%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 5px;
+  margin-top: 10px;
+}
+.card-content {
+  width: 100%;
+  border: solid 1px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+@media (max-width: 850px) {
+  .card-custom {
+    width: 50%;
+  }
+}
+@media (max-width: 770px) {
+  .card-custom {
+    width: 100%;
+  }
+}

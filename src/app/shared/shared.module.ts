@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoadingComponent } from './components/loading/loading.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { CardRestoComponent } from './components/card-resto/card-resto.component';
 
 
 
 @NgModule({
   declarations: [
     LoadingComponent,
-    ModalComponent
+    ModalComponent,
+    CardRestoComponent
   ],
   imports: [
     CommonModule,
@@ -18,6 +20,7 @@ import { ModalComponent } from './components/modal/modal.component';
   exports: [
     FontAwesomeModule,
     LoadingComponent,
-    ModalComponent],
+    ModalComponent,
+    CardRestoComponent],
 })
 export class SharedModule { }

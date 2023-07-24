@@ -1,1 +1,8 @@
 <p>home works!</p>
+<app-loading [dataState]="allRestoState" [loadingTemplate]="loading">
+    <app-card-resto></app-card-resto>
+</app-loading>
+
+<ng-template #loading>
+    <div id="loader"></div>
+</ng-template>

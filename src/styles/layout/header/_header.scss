@@ -9,7 +9,7 @@
 }
 
 .title-header {
-  position: fixed;
+  position: relative;
   top: 17%;
   text-align: center;
   color: white;
@@ -26,6 +26,7 @@
 .navbar-toggler-icon {
   filter: invert(1);
 }
+
 @media (max-width: 991px) {
   .login {
     width: 100%;
