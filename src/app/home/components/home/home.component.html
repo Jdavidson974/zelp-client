@@ -1,6 +1,8 @@
-<p>home works!</p>
+<h2>Nos restaurants:</h2>
 <app-loading [dataState]="allRestoState" [loadingTemplate]="loading">
-    <app-card-resto></app-card-resto>
+    <ng-container *ngIf="allResto$|async as allResto">
+        <app-card-resto [resto]="allResto"></app-card-resto>
+    </ng-container>
 </app-loading>
 
 <ng-template #loading>

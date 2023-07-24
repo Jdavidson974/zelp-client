@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../../services/home.service';
 import { DataState } from 'src/app/shared/states/data.state';
+import { Restaurant } from 'src/app/shared/models/restaurant.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +11,12 @@ import { DataState } from 'src/app/shared/states/data.state';
 })
 export class HomeComponent implements OnInit {
   constructor(private homeService: HomeService) { }
-  allRestoState !: DataState<any>;
+  allRestoState !: DataState<Restaurant[]>;
+  allResto$ !: Observable<Restaurant[] | null>;
 
   ngOnInit(): void {
     this.allRestoState = this.homeService.allRestoState;
+    this.allResto$ = this.allRestoState.value$;
   }
   getAll() {
     this.homeService.getAllResto();
