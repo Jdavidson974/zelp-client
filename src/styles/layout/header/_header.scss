@@ -1,0 +1,35 @@
+.header-layout {
+  width: 100%;
+  background-image: url("/assets/img/header1.jpg");
+  height: 400px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.title-header {
+  position: relative;
+  top: 40%;
+  text-align: center;
+  color: white;
+}
+
+.search {
+  width: 75%;
+}
+.login {
+  width: 50%;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+@media (max-width: 991px) {
+  .login {
+    width: 100%;
+    li {
+      margin-top: 5px;
+    }
+  }
+}
