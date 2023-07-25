@@ -5,9 +5,12 @@ $theme-colors: (
   "success": #47ff36,
   "danger": #ff4136,
 );
+$primary: #e69b2c;
+$secondary: #62b6f5;
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
 @import "styles/base/base";
 @import "styles/layout/header/header";
 @import "styles/components/card-resto/card-resto";
 @import "styles/pages/auth/layout";
+@import "styles/pages/auth/login-register";

@@ -1,0 +1,23 @@
+.form-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.btn-connexion {
+  background-color: $primary;
+  box-shadow: 0 200px 100px -100px $primary inset;
+  transition: box-shadow 0.5s;
+}
+
+.btn-connexion:hover {
+  background-color: $secondary;
+  box-shadow: 0 200px 100px -100px $secondary inset;
+}
+
+.title-form {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: large;
+}
