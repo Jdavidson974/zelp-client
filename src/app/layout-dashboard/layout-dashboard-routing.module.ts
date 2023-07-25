@@ -15,7 +15,7 @@ const routes: Routes = [
         path: "mes-restaurant",
         loadChildren: () => import('../restaurant/restaurant.module').then(m => m.RestaurantModule),
       },
-    ]
+    ],
   }
 ];
 
