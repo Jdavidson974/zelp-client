@@ -27,6 +27,21 @@
   filter: invert(1);
 }
 
+.box-link-primary {
+  background-color: $primary;
+  color: white;
+  border-radius: 5px;
+  width: 50%;
+  text-align: center;
+}
+.box-link-secondary {
+  background-color: $secondary;
+  color: white;
+  border-radius: 5px;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+}
 @media (max-width: 991px) {
   .login {
     width: 100%;

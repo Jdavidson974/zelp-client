@@ -34,10 +34,21 @@
                         <app-loading [dataState]="profilState" class="w-100 d-flex">
                             <!-- TODO revoir le responsive du dropdown  -->
                             <ng-container *ngIf="profil$|async as profil">
-                                <div class="text-white w-75 d-flex justify-content-center">
-                                    <span>
-                                        {{profil.lastname}} {{profil.firstname}}
-                                    </span>
+                                <div class="text-white w-75 d-flex flex-column justify-content-center">
+                                    <div class="w-100 d-flex justify-content-center">
+                                        <span class="box-link-primary">
+                                            {{profil.lastname}} {{profil.firstname}}
+                                        </span>
+                                    </div>
+                                    <div class="w-100  d-flex justify-content-center">
+                                        <ng-container *ngIf="profil.role == 'client'">
+                                            <a routerLink="/mes-avis" class="box-link-secondary">mes avis</a>
+                                        </ng-container>
+                                        <ng-container *ngIf="profil.role == 'restaurateur'">
+                                            <a routerLink="/mes-restaurant" class="box-link-secondary">mes
+                                                restaurant</a>
+                                        </ng-container>
+                                    </div>
                                 </div>
                             </ng-container>
                             <div class="w-25 d-flex justify-content-end">

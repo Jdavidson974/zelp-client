@@ -29,7 +29,6 @@ export class RegisterComponent {
       role: this.formBuilder.control('client', [Validators.required]),
       ville: this.formBuilder.control('', Validators.required),
     })
-
   }
 
   submit() {
