@@ -1,1 +1,74 @@
-<p>register works!</p>
+<div class="form-container">
+    <div class="title-form">S'inscrire</div>
+    <form [formGroup]="formRegister">
+        <div class="form-content">
+            <div class="form-floating w-100 mb-3">
+                <input placeholder="Nom" formControlName="lastname" type="text" class="form-control" id="nom">
+                <label for="nom">Nom</label>
+            </div>
+            <div class="form-floating w-100 mb-3">
+                <input placeholder="Prenom" formControlName="firstname" type="text" class="form-control" id="prenom">
+                <label for="prenom">Prenom</label>
+            </div>
+            <div class="form-floating w-100 mb-3">
+                <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="Email">
+                <label for="floatingInput">Email</label>
+            </div>
+            <div class="form-floating w-100">
+                <input formControlName="password" type="password" class="form-control" id="floatingPassword"
+                    placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="w-100 mt-2 d-flex flex-column">
+                <div class="choose-type">
+                    Vous ete un :
+                </div>
+                <div class="w-100 mb-2">
+                    <input formControlName="role" type="radio" value="client" name="role" class="btn-check" id="user"
+                        autocomplete="off">
+                    <label class="btn btn-outline-primary me-3" for="user">Utilisateur</label>
+                    <input formControlName="role" type="radio" value="restaurateur" name="role" class="btn-check"
+                        id="restaurateur" autocomplete="off">
+                    <label class="btn btn-outline-secondary" for="restaurateur">Restaurateur</label>
+                </div>
+            </div>
+            <div class="villePicker w-100 my-2">
+                <app-loading [dataState]="villeState" [loadingTemplate]="loadingSelect">
+                    <ng-container *ngIf="villes$|async as villes">
+                        <select formControlName="ville" class="form-select">
+                            <option value="" selected>Choisissez votre ville</option>
+                            <ng-container *ngFor="let item of villes">
+                                <option [value]="item.id">{{item.name}}</option>
+                            </ng-container>
+                        </select>
+                    </ng-container>
+                </app-loading>
+            </div>
+
+            <app-loading [dataState]="registerState" [loadingTemplate]="loadingBtn" [errorTemplate]="error">
+                <ng-container *ngIf="formRegister.valid;else noValid">
+                    <button (click)="submit()" class="btn btn-connexion mt-2">Valider</button>
+                </ng-container>
+            </app-loading>
+            <ng-template #loadingBtn>
+                <button appSizingBox [width]="76" class="btn btn-connexion mt-2 disabled">
+                    <div appSizingBox [height]="25" [width]="25" class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </button>
+            </ng-template>
+            <ng-template #noValid>
+                <button class="btn btn-connexion mt-2 disabled">Valider</button>
+            </ng-template>
+            <ng-template #error>
+                <ng-container *ngIf="formRegister.valid;else noValid">
+                    <button (click)="submit()" class="btn btn-connexion mt-2">Valider</button>
+                </ng-container>
+            </ng-template>
+        </div>
+    </form>
+</div>
+
+<ng-template #loadingSelect>
+    <div style="height: 38px; width: 100%;" class="rounded loading"></div>
+</ng-template>

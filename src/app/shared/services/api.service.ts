@@ -23,10 +23,8 @@ export class ApiService {
     return this.httpClient.get<T>(this.apiUrl + path, httpParam ? { params: httpParam } : {}).pipe(
       take(1),
       tap(result => {
-        setTimeout(() => {
-          processModel.setValue$(result);
-          processModel.setIsLoading$(false);
-        }, 2000);
+        processModel.setValue$(result);
+        processModel.setIsLoading$(false);
       }),
       catchError(error => {
         processModel.setMsgError$(error.error.message);
@@ -43,17 +41,13 @@ export class ApiService {
     return this.httpClient.post<T>(this.apiUrl + path, params,).pipe(
       take(1),
       tap(result => {
-        setTimeout(() => {
-          processModel.setValue$(result);
-          processModel.setIsLoading$(false);
-        }, 2000);
+        processModel.setValue$(result);
+        processModel.setIsLoading$(false);
       }),
       catchError(error => {
-        setTimeout(() => {
-          processModel.setMsgError$(error.error.message);
-          processModel.setIsLoading$(false);
-          processModel.setHasError$(true);
-        }, 2000);
+        processModel.setMsgError$(error.error.message);
+        processModel.setIsLoading$(false);
+        processModel.setHasError$(true);
         throw error
       })
     );
@@ -64,10 +58,8 @@ export class ApiService {
     processModel.setValue$(null);
     return this.httpClient.patch<T>(this.apiUrl + path, params).pipe(
       tap(result => {
-        setTimeout(() => {
-          processModel.setValue$(result);
-          processModel.setIsLoading$(false);
-        }, 2000);
+        processModel.setValue$(result);
+        processModel.setIsLoading$(false);
       }),
       catchError(error => {
         processModel.setMsgError$(error.error.message);
@@ -113,10 +105,8 @@ export class ApiService {
     return this.httpClient.delete<T>(this.apiUrl + path).pipe(
       take(1),
       tap(result => {
-        setTimeout(() => {
-          processModel.setValue$(result);
-          processModel.setIsLoading$(false);
-        }, 2000);
+        processModel.setValue$(result);
+        processModel.setIsLoading$(false);
       }),
       catchError(error => {
         processModel.setIsLoading$(false);

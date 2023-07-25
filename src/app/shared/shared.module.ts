@@ -5,6 +5,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { CardRestoComponent } from './components/card-resto/card-resto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SizingBoxDirective } from './directives/sizing-box.directive';
 
 
 
@@ -12,7 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     LoadingComponent,
     ModalComponent,
-    CardRestoComponent
+    CardRestoComponent,
+    SizingBoxDirective
   ],
   imports: [
     CommonModule,
@@ -26,6 +28,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FontAwesomeModule,
     LoadingComponent,
     ModalComponent,
-    CardRestoComponent],
+    CardRestoComponent,
+    SizingBoxDirective
+  ],
 })
 export class SharedModule { }

@@ -12,11 +12,25 @@
                     placeholder="Password">
                 <label for="floatingPassword">Password</label>
             </div>
-            <ng-container *ngIf="formLogin.valid;else noValid">
-                <button (click)="submit()" class="btn btn-connexion mt-2">Se connecter</button>
-            </ng-container>
+            <app-loading [dataState]="loginState" [loadingTemplate]="loadingBtn" [errorTemplate]="error">
+                <ng-container *ngIf="formLogin.valid;else noValid">
+                    <button (click)="submit()" class="btn btn-connexion mt-2">Se connecter</button>
+                </ng-container>
+            </app-loading>
+            <ng-template #loadingBtn>
+                <button appSizingBox [width]="120" class="btn btn-connexion mt-2 disabled">
+                    <div appSizingBox [height]="25" [width]="25" class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </button>
+            </ng-template>
             <ng-template #noValid>
                 <button class="btn btn-connexion mt-2 disabled">Se connecter</button>
+            </ng-template>
+            <ng-template #error>
+                <ng-container *ngIf="formLogin.valid;else noValid">
+                    <button (click)="submit()" class="btn btn-connexion mt-2">Se connecter</button>
+                </ng-container>
             </ng-template>
         </div>
     </form>
