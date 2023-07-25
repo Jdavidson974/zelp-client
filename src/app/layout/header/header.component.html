@@ -17,17 +17,36 @@
                         <span class="input-group-text btn btn-primary"><fa-icon [icon]="iconSearch"></fa-icon></span>
                     </div>
                 </form>
-
                 <!-- BTN ZONE  -->
-                <ul class="navbar-nav me-auto d-flex justify-content-end mb-2 mb-lg-0 login">
-                    <li class="nav-item me-2">
-                        <button routerLink="/auth" class="btn btn-primary">Se connecter</button>
-                    </li>
+                <ng-container *ngIf="!connected ; else connectedPanel">
+                    <ul class="navbar-nav me-auto d-flex justify-content-end mb-2 mb-lg-0 login">
+                        <li class="nav-item me-2">
+                            <button routerLink="/auth" class="btn btn-primary">Se connecter</button>
+                        </li>
 
-                    <li class="nav-item me-2">
-                        <button routerLink="/auth/register" class="btn btn-secondary">S'inscrire</button>
-                    </li>
-                </ul>
+                        <li class="nav-item me-2">
+                            <button routerLink="/auth/register" class="btn btn-secondary">S'inscrire</button>
+                        </li>
+                    </ul>
+                </ng-container>
+                <ng-template #connectedPanel>
+                    <div class="navbar-nav me-auto d-flex justify-content-end mb-2 mb-lg-0 login">
+                        <app-loading [dataState]="profilState" class="w-100 d-flex">
+                            <!-- TODO revoir le responsive du dropdown  -->
+                            <ng-container *ngIf="profil$|async as profil">
+                                <div class="text-white w-75 d-flex justify-content-center">
+                                    <span>
+                                        {{profil.lastname}} {{profil.firstname}}
+                                    </span>
+                                </div>
+                            </ng-container>
+                            <div class="w-25 d-flex justify-content-end">
+                                <button (click)="logout()" class=" btn btn-outline-secondary"><fa-icon
+                                        [icon]="iconDoor"></fa-icon></button>
+                            </div>
+                        </app-loading>
+                    </div>
+                </ng-template>
             </div>
         </div>
     </nav>

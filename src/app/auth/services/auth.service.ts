@@ -12,6 +12,7 @@ import { Register } from '../models/register.model';
 export class AuthService extends ApiService {
   loginState: DataState<GetToken> = new DataState<GetToken>(null);
   registerState: DataState<GetToken> = new DataState<GetToken>(null);
+  profilState: DataState<any> = new DataState<any>(null);
   login(data: LoginData) {
     this.post<GetToken>("auth/login", this.loginState, data).pipe(
       tap(
@@ -33,5 +34,11 @@ export class AuthService extends ApiService {
         }
       )
     ).subscribe()
+  }
+  getProfilByNav() {
+    this.get('auth/profile', this.profilState).subscribe();
+  }
+  getProfilByResolver() {
+    this.get('auth/profile', this.profilState)
   }
 }
