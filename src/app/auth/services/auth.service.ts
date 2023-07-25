@@ -30,6 +30,9 @@ export class AuthService extends ApiService {
         token => {
           if (token.access_token) {
             localStorage.setItem('token', token.access_token);
+            this.router.navigateByUrl("/");
+          } else {
+            alert('error');
           }
         }
       )

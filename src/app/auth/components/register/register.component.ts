@@ -34,24 +34,7 @@ export class RegisterComponent {
 
   submit() {
     if (this.formRegister.valid) {
-      console.log(this.formRegister.value);
-      this.authService.register(this.formRegister.value)
-      this.registerState.isLoading$.pipe(
-        tap(
-          loading => {
-            if (!loading) {
-              const token = localStorage.getItem('token')
-              if (token) {
-                this.router.navigateByUrl('/');
-              } else {
-                // TODO gerer le cas 
-                alert("error")
-              }
-            }
-          }
-        ),
-        takeWhile(loading => loading)
-      ).subscribe()
+      this.authService.register(this.formRegister.value);
     }
   }
 }

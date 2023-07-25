@@ -10,7 +10,6 @@ export class VilleService extends ApiService {
 
   allVilleState: DataState<any> = new DataState<any>(null);
   getAllVille() {
-    this.get('ville', this.allVilleState).pipe(tap(a => console.log(a)
-    )).subscribe();
+    this.get('ville', this.allVilleState).subscribe();
   }
 }
