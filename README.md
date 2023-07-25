@@ -4,13 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Installation
 
-Pour commencer installez le CLI d'angular avec la commande suivante.
+Pour commencer installer le CLI d'angular avec la commande suivante.
 
 ```bash
 $ npm install -g @angular/cli
 ```
 
-Une fois fait , récuperer le projet et allez a la racine du projet pour executer la commande suivante
+Une fois fait , récuperer le projet et allez à la racine du projet pour executer la commande suivante
 
 ```bash
 $ npm i
