@@ -5,12 +5,16 @@
 }
 
 .btn-connexion {
+  color: white;
+  font-weight: 600;
   background-color: $primary;
   box-shadow: 0 200px 100px -100px $primary inset;
   transition: box-shadow 0.5s;
 }
 
 .btn-connexion:hover {
+  color: white;
+  font-weight: 600;
   background-color: $secondary;
   box-shadow: 0 200px 100px -100px $secondary inset;
 }

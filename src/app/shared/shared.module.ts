@@ -4,6 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoadingComponent } from './components/loading/loading.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { CardRestoComponent } from './components/card-resto/card-resto.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -16,8 +17,12 @@ import { CardRestoComponent } from './components/card-resto/card-resto.component
   imports: [
     CommonModule,
     FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
+    FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     LoadingComponent,
     ModalComponent,

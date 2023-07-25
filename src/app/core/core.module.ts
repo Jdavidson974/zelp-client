@@ -12,8 +12,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     SharedModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
   ],
   exports: [
     HttpClientModule
